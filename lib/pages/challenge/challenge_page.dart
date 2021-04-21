@@ -1,4 +1,5 @@
 import 'package:dev_quiz/pages/challenge/widgets/question_indicator.dart';
+import 'package:dev_quiz/pages/challenge/widgets/quiz.dart';
 import 'package:flutter/material.dart';
 
 class ChallengePage extends StatefulWidget {
@@ -17,7 +18,7 @@ class _ChallengePageState extends State<ChallengePage> {
           child: QuestionIndicator(),
         ),
       ),
-      body: Container(),
+      body: Quiz(),
     );
   }
 }
