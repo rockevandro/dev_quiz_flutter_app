@@ -11,6 +11,7 @@ class ScoreCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(15),
+        border: Border.fromBorderSide(BorderSide(color: AppColors.border))
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
