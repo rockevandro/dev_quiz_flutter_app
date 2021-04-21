@@ -1,5 +1,6 @@
 import 'package:dev_quiz/pages/home/widgets/home_app_bar.dart';
 import 'package:dev_quiz/pages/home/widgets/level_button.dart';
+import 'package:dev_quiz/pages/home/widgets/quiz_card.dart';
 import 'package:dev_quiz/shared/enums/level.dart';
 import 'package:flutter/material.dart';
 
@@ -15,13 +16,34 @@ class _HomePageState extends State<HomePage> {
       appBar: HomeAppBar(),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
           children: [
-            LevelButton(type: Level.Ease),
-            LevelButton(type: Level.Medium),
-            LevelButton(type: Level.Hard),
-            LevelButton(type: Level.VeryHard),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                LevelButton(type: Level.Ease),
+                LevelButton(type: Level.Medium),
+                LevelButton(type: Level.Hard),
+                LevelButton(type: Level.VeryHard),
+              ],
+            ),
+            SizedBox(
+              height: 24,
+            ),
+
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                children: [
+                  QuizCard(),
+                  QuizCard(),
+                  QuizCard(),
+                  QuizCard(),
+                ],
+              ),
+            )
           ],
         ),
       ),
