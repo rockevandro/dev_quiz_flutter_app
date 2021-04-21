@@ -1,5 +1,6 @@
 import 'package:dev_quiz/core/app_images.dart';
 import 'package:dev_quiz/core/core.dart';
+import 'package:dev_quiz/shared/widgets/jt_linear_progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 class QuizCard extends StatelessWidget {
@@ -9,9 +10,8 @@ class QuizCard extends StatelessWidget {
       padding: EdgeInsets.all(16),
       height: 160,
       decoration: BoxDecoration(
-        border: Border.fromBorderSide(BorderSide(color: AppColors.border)),
-        borderRadius: BorderRadius.circular(10)
-      ),
+          border: Border.fromBorderSide(BorderSide(color: AppColors.border)),
+          borderRadius: BorderRadius.circular(10)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,19 +26,14 @@ class QuizCard extends StatelessWidget {
           Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(right:21),
+                padding: const EdgeInsets.only(right: 21),
                 child: Text(
                   "3 de 10",
                   style: AppTextStyles.body11,
                 ),
               ),
               Expanded(
-                child: LinearProgressIndicator(
-                  backgroundColor: AppColors.chartSecondary,
-                  value: .3,
-                  valueColor:
-                      AlwaysStoppedAnimation<Color>(AppColors.chartPrimary),
-                ),
+                child: JtLinearProgressIndicator(value: 0.3),
               )
             ],
           )
